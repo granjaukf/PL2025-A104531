@@ -6,7 +6,7 @@
 ## Autoria
 - Nome: Rodrigo Miguel Granja Ferreira
 - Número mecanográfico: A104531
-<img src="foto.jpg" alt="Minha Foto" width="200"/>
+<img src="../foto.jpg" alt="Minha Foto" width="200"/>
 
 ## Resumo 
 O TP1 consistiu na implementação de um programa em Python que:
