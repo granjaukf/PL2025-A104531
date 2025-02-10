@@ -15,6 +15,12 @@ O TP1 consistiu na implementação de um programa em Python que:
 3. Sempre que encontrar a string `On`, em qualquer combinação de maiúsculas e minúsculas, o comportamento de soma é ligado;
 4. Sempre que encontrar o caráter `=`, o resultado da soma é colocado na saída.
 
+**Exemplo:**
+- Entrada: `12on34off56=on78=`
+- Saída:
+  46
+  124
+  
 A função `adder` foi desenvolvida para percorrer o texto, identificar palavras reservadas (=, On, Off) e literais numéricos, controlar a soma e gerar resultados conforme solicitado. Os testes foram realizados com diferentes combinações de entradas para verificar o comportamento do programa em situações variadas.
 
 ## Metodologia
