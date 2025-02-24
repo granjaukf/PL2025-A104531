@@ -42,36 +42,36 @@ def main():
     file = open("resultados.txt",'w')
     
     cabecalho = "# Exemplo"
-    markdown1 = markdownCabecalho(cabecalho)
+    html1 = markdownCabecalho(cabecalho)
         
     bold = "Este é um **exemplo**"
-    markdown2 = markdownBold(bold)
+    html2 = markdownBold(bold)
         
     italic = "Este é um *exemplo*"
-    markdown3 = markdownItalic(italic)
+    html3 = markdownItalic(italic)
         
     imagem = "Como se vê na imagem seguinte: ![imagem dum coelho](http://www.coellho.com)"
-    markdown4 = markdownImagem(imagem)
+    html4 = markdownImagem(imagem)
     
     link = "Como pode ser consultado em [página da UC](http://www.uc.pt)"   
-    markdown5 = markdownLink(link)
+    html5 = markdownLink(link)
     
     listaNumerada = """1. Primeiro item
 2. Segundo item
 3. Terceiro item"""
-    markdown6 = markdownListaNumerada(listaNumerada)
+    html6 = markdownListaNumerada(listaNumerada)
     
-    print("Conversão do cabeçalho:", markdown1, file=file)
+    print("Conversão do cabeçalho:", html1, file=file)
     print("-------------------------------------",file=file)
-    print("Conversão bold:", markdown2,file=file)
+    print("Conversão bold:", html2,file=file)
     print("-------------------------------------",file=file)
-    print("Conversão italic:", markdown3,file=file)
+    print("Conversão italic:", html3,file=file)
     print("-------------------------------------",file=file)
-    print("Conversão imagem:", markdown4,file=file)
+    print("Conversão imagem:", html4,file=file)
     print("-------------------------------------",file=file)
-    print("Conversão link:", markdown5,file=file)
+    print("Conversão link:", html5,file=file)
     print("-------------------------------------",file=file)
-    print("Conversão da lista numerada:\n", markdown6,file=file)
+    print("Conversão da lista numerada:\n", html6,file=file)
     
     
 if __name__ == "__main__":
