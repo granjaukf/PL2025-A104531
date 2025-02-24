@@ -24,7 +24,7 @@ A função `main` lê exemplos de Markdown, aplica as funções de conversão e 
 
 ## Metodologia
 
-Para a implementação do conversor de Markdown para HTML, seguimos os seguintes passos:
+Para a implementação do conversor de Markdown para HTML, segui os seguintes passos:
 
 1. **Análise da Sintaxe Markdown**: Estudei a "Basic Syntax" da Cheat Sheet para identificar os elementos que precisavam ser convertidos.
 2. **Desenvolvimento das Funções de Conversão**: Implementei funções específicas para converter cada elemento Markdown para o seu equivalente em HTML. Para isso, utilizei a função `re.sub` da biblioteca `re` (expressões regulares) do Python, que permite substituir padrões de texto de forma eficiente. Utilizei `grupos nomeados` nas expressões regulares para capturar partes específicas do texto a ser convertido. O uso de grupos nomeados foi determinante na resolução do problema porque permitiu identificar e substituir de forma precisa as partes do texto que correspondiam aos elementos Markdown, facilitando a conversão para HTML.
