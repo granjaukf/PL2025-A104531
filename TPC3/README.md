@@ -9,7 +9,7 @@
 <img src="../foto.jpg" alt="Minha Foto" width="200"/>
 
 ## Resumo 
-O TP2 consistiu na implementação de um programa em Python que converte de Markdown para HTML para os elementos descritos na "Basic Syntax" da Cheat Sheet.
+O TP3 consistiu na implementação de um programa em Python que converte de Markdown para HTML para os elementos descritos na "Basic Syntax" da Cheat Sheet.
 
 O programa inclui várias funções para converter diferentes elementos de Markdown para HTML:
 
