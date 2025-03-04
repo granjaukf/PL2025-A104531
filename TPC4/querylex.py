@@ -66,9 +66,7 @@ lexer = lex.lex(reflags=re.IGNORECASE)
 
 def main():
     file = open("lextoken.txt", "w")
-    data = """
-    # DBPedia: obras de Chuck Berry
-    
+    data = """# DBPedia: obras de Chuck Berry
     SELECT ?nome ?desc WHERE {
     ?s a dbo:MusicalArtist.
     ?s foaf:name "Chuck Berry"@en .
