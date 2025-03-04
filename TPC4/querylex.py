@@ -20,6 +20,7 @@ tokens = (
     'STRING',
     'NUM',
     'DOISPONTOS',
+    'COMMENT',
 )
 
 # Regular expression rules for tokens
@@ -50,6 +51,7 @@ t_TAG = r'@\w+'
 t_STRING = r'".*?"'
 t_NUM = r'\d+'
 t_DOISPONTOS = r':'
+t_COMMENT = r'#.*'
 t_ignore = ' \t'
 
 def t_newline(t):
@@ -65,6 +67,8 @@ lexer = lex.lex(reflags=re.IGNORECASE)
 def main():
     file = open("lextoken.txt", "w")
     data = """
+    # DBPedia: obras de Chuck Berry
+    
     SELECT ?nome ?desc WHERE {
     ?s a dbo:MusicalArtist.
     ?s foaf:name "Chuck Berry"@en .

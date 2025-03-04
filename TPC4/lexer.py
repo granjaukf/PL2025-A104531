@@ -16,7 +16,7 @@ def tokenize(code):
         ('STRING', r'"[^\n"]*"'),
         ('NUM', r'\d+'),
         ('DOISPONTOS', r':'),
-        ('COMMENT', r'#.*'),  # Novo token para comentários
+        ('COMMENT', r'#.*'), 
         ('SKIP', r'[ \t]+'),
         ('NEWLINE', r'\n'),
     ]

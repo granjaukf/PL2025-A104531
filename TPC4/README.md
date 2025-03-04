@@ -28,7 +28,7 @@ Na primeira abordagem, utilizei a biblioteca PLY para construir o analisador lé
 
 Abaixo, mostro como a estrutura básica do código foi construída:
 
-- **Tokens**: `SELECT`, `WHERE`, `VARIAVEL`, `ID`, `DOISPONTOS`, `PONTO`, `STRING`, `TAG`, `CA`, `CF`.
+- **Tokens**: `SELECT`, `WHERE`, `VARIAVEL`, `ID`, `DOISPONTOS`, `PONTO`, `STRING`, `TAG`, `CA`, `CF`, `COMMENT`.
 - **Função de erro**: O lexer possui uma função que lida com caracteres ilegais.
 - **Leitura de entrada**: A query é processada e os tokens são gerados e escritos num ficheiro de saída.
 
