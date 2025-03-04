@@ -2,9 +2,6 @@ import sys
 import re
 
 def tokenize(code):
-    # Remove comments first
-    code = re.sub(r'#.*', '', code)
-    
     tokens = []
     token_specification = [
         ('SELECT', r'SELECT'),
@@ -19,6 +16,7 @@ def tokenize(code):
         ('STRING', r'"[^\n"]*"'),
         ('NUM', r'\d+'),
         ('DOISPONTOS', r':'),
+        ('COMMENT', r'#.*'),  # Novo token para comentários
         ('SKIP', r'[ \t]+'),
         ('NEWLINE', r'\n'),
     ]
@@ -30,14 +28,14 @@ def tokenize(code):
         tipo = match.lastgroup
         valor = match.group(tipo)
         
-        if tipo == 'SKIP':
+        if tipo == 'SKIP': 
             continue
         
-        if tipo == 'NEWLINE':
+        if tipo == 'NEWLINE': 
             linha += 1
             continue
-        
-        tokens.append((tipo, valor, linha, match.span()))
+        else:
+            tokens.append((tipo, valor, linha, match.span()))
     
     return tokens
 
