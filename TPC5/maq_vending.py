@@ -114,6 +114,9 @@ class MaquinaVending:
                 saldo = resto
                 i += 1
             print(output[:-2])
+            
+        self.save_stock()    
+            
         print("maq: Até à próxima")
         self.on = False
         return t
@@ -128,6 +131,20 @@ class MaquinaVending:
         print(f"Unsupported character '{t.value[:-1]}'")
         t.lexer.skip(len(t.value))
         
+    def save_stock(self, filename='stock.json'):
+        stock_list = []
+        for cod, values in self.stock.items():
+            item = {
+                'cod': cod,
+                'nome': values[0],
+                'quant': values[1],
+                'preco': values[2] / 100  # Convertendo de volta para euros
+            }
+            stock_list.append(item)
+    
+        with open(filename, 'w', encoding='utf-8') as f:
+            json.dump({'stock': stock_list}, f, ensure_ascii=False, indent=4)
+        
 def main():
     with open('stock.json', encoding="utf-8") as json_file:
         data = json.load(json_file)
@@ -141,11 +158,14 @@ def main():
 
     print(f"maq: {date.today()}, Stock carregado, Estado atualizado.")
     print("maq: Bom dia. Estou disponível para atender o seu pedido.")
-    while(maquina.on):
-        line = input()
-        maquina.lexer.input(line)
-        maquina.lexer.token()
-
+    
+    try:
+        while(maquina.on):
+            line = input()
+            maquina.lexer.input(line)
+            maquina.lexer.token()
+    finally:
+        maquina.save_stock()
 
 if __name__ == "__main__":
     main()
