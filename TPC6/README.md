@@ -47,17 +47,17 @@ A precedência de operadores é implementada através da estrutura hierárquica 
 - Operadores de multiplicação ('*') têm maior precedência e são processados em níveis mais baixos (Term)
 - Operadores de adição/subtração (+/-) têm menor precedência e são processados em níveis mais altos (Exp)
 
-### Árvores de decisão
+### Árvores de derivação
 #### Exemplo 1: 5 + 3 * 2
 
 Para este exemplo, a árvore de decisão considera a precedência dos operadores. O operador de multiplicação (*) tem maior precedência que a adição (+), então a multiplicação é processada primeiro. Neste caso, a multiplicação de 3 * 2 é calculada primeiro, resultando em 6, e depois a adição 5 + 6 é realizada, resultando em 11. A árvore de decisão é construída como segue:
 
-![Árvore de decisão para o exemplo 1](AD_exp1.png)
+![Árvore de derivação para o exemplo 1](AD_exp1.png)
 
 #### Exemplo 2: 2 * 7 - 5 * 3
 Para este exemplo, a árvore de decisão respeita a precedência dos operadores de multiplicação e adição/subtração. A multiplicação é processada antes da subtração. Aqui, as multiplicações 2 * 7 e 5 * 3 são feitas primeiro, resultando em 14 e 15, respectivamente. Depois, a subtração 14 - 15 é realizada, resultando em -1. A árvore de decisão é construída como segue:
 
-![Árvore de decisão para o exemplo 2](AD_expr2.png)
+![Árvore de derivação para o exemplo 2](AD_expr2.png)
 
 ### Exemplos de execução
 
