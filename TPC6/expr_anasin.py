@@ -5,12 +5,12 @@ from expr_analex import lexer
 
 prox_simb = ('Erro', '', 0, 0)
 
-# R com maior precedência para * 
+# R com maior precedência para * e suporte a parênteses
 # Exp -> Term Exp'
 # Exp' -> ('+' | '-') Term Exp' |
 # Term -> Factor Term'
 # Term' -> ('*') Factor Term' | 
-# Factor -> num 
+# Factor -> '(' Exp ')' | num
 
 def parserError(simb):
     print("Erro sintático, token inesperado: ", simb)
@@ -22,10 +22,16 @@ def rec_Factor():
         valor = int(prox_simb.value)
         prox_simb = lexer.token()
         return valor
-    else:
-        parserError(prox_simb)
-        return 0 
-
+    elif prox_simb.type == 'LPAREN':
+        prox_simb = lexer.token()
+        valor = rec_Exp()
+        if prox_simb.type == 'RPAREN':
+            prox_simb = lexer.token()
+            return valor
+        else:
+            parserError(prox_simb)
+            return None
+    
 # Term' -> ('*') Factor Term' | 
 def rec_TermP(valor_esq):
     global prox_simb

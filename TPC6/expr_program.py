@@ -4,11 +4,14 @@
 from expr_anasin import rec_Parser
 def main():
     file = open("resultados.txt", "w")
-    resultado1 = rec_Parser("5 + 3 * 2")
-    print(f"5 + 3 * 2 = {resultado1}",file=file)
+    resultado1 = rec_Parser("2+3")
+    print(f"2+3 = {resultado1}",file=file)
     
-    resultado2 = rec_Parser("2 * 7 - 5 * 3")
-    print(f"2 * 7 - 5 * 3 = {resultado2}",file=file)  
+    resultado2 = rec_Parser("67-(2+3*4)")
+    print(f"67-(2+3*4) = {resultado2}",file=file)  
+    
+    resultado3 = rec_Parser("(9-2)*(13-4)")
+    print(f"(9-2)*(13-4) = {resultado3}",file=file)  
 
 
 if __name__ == "__main__":  
